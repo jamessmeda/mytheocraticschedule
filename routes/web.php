@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ThingsController;
+use App\Models\ContactController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Thing;
+use App\Http\Controllers\ActionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +27,14 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $things = Thing::all()->get('name');
+        return view('dashboard')->with($things);
     })->name('dashboard');
 });
+
+Route::get('/contact', ContactController::class)->name('contact');
+Route::controller(ThingsController::class)->group(function () {
+    Route::get('/days', 'index')->name('day');
+    Route::get('/days/{id}', 'show')->name('SolidThinking');
+});
+Route::resource('actions', ActionsController::class);
