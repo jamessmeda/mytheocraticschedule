@@ -14,6 +14,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+    <div class="rounded border-2 xl:-bottom-1/4 flex-1 text-center">
+        Welcome to my application that I build for myself. Now it's available for you too.
+    </div>
+
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
