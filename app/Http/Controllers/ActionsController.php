@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Action;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ActionsController extends Controller
@@ -20,7 +21,7 @@ class ActionsController extends Controller
     {
         $request->validate([
             'thing-id' => 'required',
-            'action-date' => 'required',
+            'action_date' => 'required',
             'action-type' => 'required',
         ]);
 //        dd($request);
@@ -28,9 +29,11 @@ class ActionsController extends Controller
             'user_id' => \Auth::id(),
             'action-type' => 'done',
             'thing-id' => $request['thing-id'],
-            'action-date' => $request['action-date']
+            'action_date' => $request['action_date']
         ]);
         $actionDone->save();
+
+        return redirect(route('day'));
     }
 
     public function show(Action $action)

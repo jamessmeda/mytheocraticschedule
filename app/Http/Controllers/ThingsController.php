@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Thing;
-use App\Models\Action;
+
+//use App\Models\Action;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,8 @@ class ThingsController extends Controller
 {
     public function index()
     {
-       
-        $actions = Action::where('user_id', Auth::id())->get();
+
+//        $actions = Action::where('user_id', Auth::id())->get();
         $things = Thing::all();
 
         return view('days', compact('things'));
