@@ -7,27 +7,12 @@
                 <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
                 <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
                 <input type="hidden" name="action-type" value="Done"></input>
+                @if($thing['id']==1)
+                    @livewire('bible-dropdown')
+                @endif
                 <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
                 @livewire('actions', ['thingId' => $thing['id']])
 
-                {{--                $actions = Action::where('user_id', Auth::id())->get();--}}
-
-
-
-                {{--                @foreach($actions as $action)--}}
-
-                {{--                    @if( ($action['$thing-id'] == $thing['id']) )--}}
-                {{--                        @dd($action)--}}
-                {{--                        --}}{{--                        $date = Carbon::parse("2019-10-02 09:21:52");--}}
-
-                {{--                        --}}{{--                        return $date->isToday() ? 1 : 0;--}}
-                {{--                        [*]--}}
-
-                {{--                    @else--}}
-                {{--                        --}}{{--                        [+]--}}
-                {{--                    @endif--}}
-                {{--                    --}}{{--                {{$action['action-date']}}--}}
-                {{--                @endforeach--}}
             </form>
         </div>
     @endforeach
