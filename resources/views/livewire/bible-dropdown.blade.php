@@ -1,20 +1,21 @@
 <div>
+    @foreach($readBooks as $reads)
 
+        <select>
+            <option value="0">-- Select Bible Book --</option>
+            @foreach($books as $book)
+                <option value="{{ $book->id }}">{{ $book->book }}</option>
+            @endforeach
+        </select>
 
-    <select>
-        <option value="0">-- Select Bible Book --</option>
-        @foreach($books as $book)
-            <option value="{{ $book->id }}">{{ $book->book }}</option>
-        @endforeach
-    </select>
+        <label>
+            Chapter
+            <input type="number" value="{{$reads->chapter}}">
+        </label>
 
-    <label>
-        Chapter
-        <input type="number" wire:model="chapter">
-    </label>
-
-    <label>
-        Verse
-        <input type="number" wire:model="verse">
-    </label>
+        <label>
+            Verse
+            <input type="number" {{$reads->verse}}>
+        </label>
+    @endforeach
 </div>
