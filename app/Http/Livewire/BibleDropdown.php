@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Action;
 use App\Models\BibleBook;
 use App\Models\Reading;
 use Illuminate\Support\Facades\Auth;
@@ -11,13 +12,16 @@ class BibleDropdown extends Component
 {
     public $books;
     public $readBooks;
-    public $chapter = 1;
-    public $verse = 1;
+    public $chapter;
+    public $verse;
+    public $actionId;
+    public $actions;
 
-    public function mount()
+    public function mount($actionId)
     {
+        $this->actionId = $actionId;
         $this->books = BibleBook::all();
-        $this->readBooks = Reading::all()->where('user_id', Auth::user()->id)->firstOrFail();
+        $this->readBooks = Reading::all()->where('action_id', $actionId);
     }
 
     public function getBooks()

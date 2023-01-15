@@ -5,15 +5,13 @@
                 {{$thing['id']}}
                 Its bible reading
                 <div class="text-center flex-fill">
-                    <form method="POST" action="{{ route('actions.store') }}">
+                    <form method="POST" action="{{ route('storeReading') }}">
                         @csrf
                         <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
                         <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
                         <input type="hidden" name="action-type" value="Done"></input>
-                        @livewire('bible-dropdown')
                         <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
                         @livewire('actions', ['thingId' => $thing['id']])
-
                     </form>
                 </div>
                 @break
@@ -25,12 +23,8 @@
                     <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
                     <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
                     <input type="hidden" name="action-type" value="Done"></input>
-                    {{--                    @if($thing['id']==1)--}}
-                    {{--                        @livewire('bible-dropdown')--}}
-                    {{--                    @endif--}}
                     <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
                     @livewire('actions', ['thingId' => $thing['id']])
-
                 </form>
                 @break
         @endswitch

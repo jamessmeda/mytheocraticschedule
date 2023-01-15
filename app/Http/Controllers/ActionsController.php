@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Action;
+use App\Models\Reading;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,39 @@ class ActionsController extends Controller
             'action_date' => $request['action_date']
         ]);
         $actionDone->save();
+
+        return redirect(route('day'));
+    }
+
+    public function storeReading(Request $request)
+    {
+        $request->validate([
+            'thing-id' => 'required',
+            'action_date' => 'required',
+            'action-type' => 'required',
+            //adding the bible reading part
+            'book' => 'required',
+            'verse' => 'required',
+            'chapter' => 'required',
+        ]);
+        $actionDone = new Action([
+            'user_id' => \Auth::id(),
+            'action-type' => 'done',
+            'thing-id' => $request['thing-id'],
+            'action_date' => $request['action_date']
+        ]);
+        $actionDone->save();
+        $readingDone = new Reading([
+//            'thing-id' => $request['thing-id'],
+            'book_read' => $request['book'],
+//            'action_id' => $request['action_id'],
+            'action_id' => $actionDone->id,
+            'book_read_date_time' => $request['action_date'],
+            'book_chapter' => $request['chapter'],
+            'book_verse' => $request['verse'],
+        ]);
+
+        $readingDone->save();
 
         return redirect(route('day'));
     }
