@@ -37,4 +37,7 @@ Route::controller(ThingsController::class)->group(function () {
     Route::get('/days', 'index')->name('day');
     Route::get('/days/{id}', 'show')->name('SolidThinking');
 });
+Route::controller(ActionsController::class)->group(function () {
+    Route::post('storeReading', 'storeReading')->name('storeReading');
+});
 Route::resource('actions', ActionsController::class);
