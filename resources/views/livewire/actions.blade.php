@@ -2,14 +2,15 @@
     @switch($thingId)
         @case(1)
             @foreach($actions as $action)
-                @if($loop->first)
-                    Look is 1
-                    @livewire('bible-dropdown', ['actionId' => $action['id']])
-                @endif
+
                 @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
                     [*]
                 @else
                     *
+                @endif
+                @if($loop->last)
+
+                    @livewire('bible-dropdown', ['actionId' => $action['id']])
                 @endif
             @endforeach
             @break
