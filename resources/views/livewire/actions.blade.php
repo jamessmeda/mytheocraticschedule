@@ -1,20 +1,27 @@
 <div>
     @switch($thingId)
-        @case(1)
+
+        @case(1) Actions for {{$thingId}}
+Bible reading actions
+    @if($actions->isEmpty())
+            @livewire('bible-dropdown', ['actionId' => 1])
+    @endif
+
             @foreach($actions as $action)
 
+            @if($loop->first)
+                @livewire('bible-dropdown', ['actionId' => $action['id']])
+
+            @endif
                 @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
                     [*]
                 @else
                     *
                 @endif
-                @if($loop->last)
 
-                    @livewire('bible-dropdown', ['actionId' => $action['id']])
-                @endif
             @endforeach
             @break
-        @default
+        @default Actions for {{$thingId}}
             @foreach($actions as $action)
                 @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
                     [*]
