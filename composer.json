@@ -9,6 +9,7 @@
         "doctrine/dbal": "^3.5",
         "guzzlehttp/guzzle": "^7.2",
         "jamesmills/laravel-timezone": "^1.11",
+        "laracasts/flash": "^3.2",
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^2.12",
         "laravel/sanctum": "^3.0",
