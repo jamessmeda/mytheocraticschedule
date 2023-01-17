@@ -1,4 +1,5 @@
 <div class="rounded-xl items-center">
+    Read books are empty
     @if($readBooks->isEmpty())
         <label>
             <select name="book">

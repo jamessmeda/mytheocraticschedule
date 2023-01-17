@@ -2,15 +2,14 @@
     @foreach($things as $thing)
         @switch($thing['id'])
             @case(1)
-
-
+Things are {{$thing['id']}}
                 <div class="text-center flex-fill">
                     <form method="POST" action="{{ route('storeReading') }}">
                         @csrf
                         <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
                         <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
                         <input type="hidden" name="action-type" value="Done"></input>
-                        <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
+                        <x-jet-button class="bg-fuchsia-700">{{ $thing['name'] }}</x-jet-button>
                         <div class="items-center">
                             @livewire('actions', ['thingId' => $thing['id']])
                         </div>
@@ -18,6 +17,7 @@
                 </div>
                 @break
             @default
+                Things are {{$thing['id']}}
                 <div class="text-center flex-fill">
                     <form method="POST" action="{{ route('actions.store') }}">
                         @csrf
