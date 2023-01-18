@@ -26,18 +26,20 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
+    Route::get('/contact', ContactController::class)->name('contact');
+    Route::controller(ThingsController::class)->group(function () {
+        Route::get('/days', 'index')->name('day');
+        Route::get('/days/{id}', 'show')->name('SolidThinking');
+    });
+    Route::controller(ActionsController::class)->group(function () {
+        Route::post('storeReading', 'storeReading')->name('storeReading');
+    });
+    Route::resource('actions', ActionsController::class);
     Route::get('/dashboard', function () {
         $things = Thing::all()->get('name');
         return view('dashboard')->with($things);
     })->name('dashboard');
 });
 
-Route::get('/contact', ContactController::class)->name('contact');
-Route::controller(ThingsController::class)->group(function () {
-    Route::get('/days', 'index')->name('day');
-    Route::get('/days/{id}', 'show')->name('SolidThinking');
-});
-Route::controller(ActionsController::class)->group(function () {
-    Route::post('storeReading', 'storeReading')->name('storeReading');
-});
-Route::resource('actions', ActionsController::class);
+
