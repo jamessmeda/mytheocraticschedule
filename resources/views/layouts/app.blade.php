@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     @livewireStyles
+    
 </head>
 <body class="font-sans antialiased">
 <x-jet-banner/>
@@ -35,7 +36,7 @@
     <main>
         {{ $slot }}
     </main>
-    {{\Carbon\Carbon::now()->tz('Australia/Adelaide')}}
+    <div class="flex-fill items-center">{{\Carbon\Carbon::now()->tz(Auth::user()->timezone)}}</div>
 
 </div>
 

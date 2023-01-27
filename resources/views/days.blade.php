@@ -2,34 +2,38 @@
     @foreach($things as $thing)
         @switch($thing['id'])
             @case(1)
-Things are {{$thing['id']}}
+                {{--Things are {{$thing['id']}}--}}
                 <div class="text-center flex-fill">
-                    <form method="POST" action="{{ route('storeReading') }}">
-                        @csrf
-                        <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
-                        <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
-                        <input type="hidden" name="action-type" value="Done"></input>
-                        <x-jet-button class="bg-fuchsia-700">{{ $thing['name'] }}</x-jet-button>
-                        <div class="items-center">
-                            @livewire('actions', ['thingId' => $thing['id']])
-                        </div>
-                    </form>
+                    <div class="rounded-3xl border-2 border-fuchsia-300 bg-emerald-50">Bible Reading<p>
+                        <form method="POST" action="{{ route('storeReading') }}">
+                            @csrf
+                            <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
+                            <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
+                            <input type="hidden" name="action-type" value="Done"></input>
+                            <x-jet-button class="bg-fuchsia-700">{{ $thing['name'] }}</x-jet-button>
+                            <div class="items-center">
+                                @livewire('actions', ['thingId' => $thing['id']])
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
                 @break
             @default
-                Things are {{$thing['id']}}
+                {{--                Things are {{$thing['id']}}--}}
                 <div class="text-center flex-fill">
-                    <form method="POST" action="{{ route('actions.store') }}">
-                        @csrf
-                        <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
-                        <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
-                        <input type="hidden" name="action-type" value="Done"></input>
-                        <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
-                        @livewire('actions', ['thingId' => $thing['id']])
-                    </form>
+                    <div class="rounded-3xl border-2 border-emerald-500 bg-emerald-50">{{$thing['name']}}<p>
+                        <form method="POST" action="{{ route('actions.store') }}">
+                            @csrf
+                            <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
+                            <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
+                            <input type="hidden" name="action-type" value="Done"></input>
+                            <x-jet-button class="bg-blend-color-burn">{{ $thing['name'] }}</x-jet-button>
+                            @livewire('actions', ['thingId' => $thing['id']])
+                        </form>
+                    </div>
                 </div>
                 @break
         @endswitch
     @endforeach
-
 </x-app-layout>
