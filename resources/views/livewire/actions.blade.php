@@ -1,8 +1,7 @@
 <div>
     @switch($thingId)
 
-        @case(1) Actions for {{$thingId}}
-        Bible reading actions
+        @case(1)
         @if($actions->isEmpty())
             @livewire('bible-dropdown', ['actionId' => 1])
         @endif
@@ -21,7 +20,7 @@
 
         @endforeach
         @break
-        @default Actions for {{$thingId}}
+        @default
         @foreach($actions as $action)
             @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
                 [*]
