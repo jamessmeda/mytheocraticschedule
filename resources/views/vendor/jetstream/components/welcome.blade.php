@@ -3,7 +3,7 @@
         <a href={{ route('day') }} >
             <div class="flex items-center">
                 <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold text-white uppercase">
-                    Each day
+                    <i class="fa-solid fa-sun"></i> Each day
                 </div>
             </div>
 

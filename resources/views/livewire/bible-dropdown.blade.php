@@ -1,5 +1,5 @@
 <div class="rounded-xl items-center">
-     @if($readBooks->isEmpty())
+    @if($readBooks->isEmpty())
         <label>
             <select name="book">
                 <option value="0">-- Select Bible Book --</option>
@@ -20,7 +20,7 @@
     </label>
 
 </div>
-    @endif
+@endif
 
 <div class="rounded-xl items-center">
     @foreach($readBooks as $reads)
@@ -42,6 +42,8 @@
         <label>
             <input name="verse" type="number" class="rounded w-24" value="{{$reads->book_verse}}">
         </label>
-        <div><a href="https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/{{ $reads->book_read }}/{{$reads->book_chapter}}/{{$reads->book_verse}}" target="_blank">https://wol.jw.org/en/wol/b/r1/lp-e/nwtsty/{{ $reads->book_read }}/{{$reads->book_chapter}}/{{$reads->book_verse}}</a> </div>
+        <div>
+            <a href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=E&prefer=lang&bible={{sprintf('%02d',$reads->book_read)}}{{sprintf('%03d',$reads->book_chapter)}}{{sprintf('%03d',$reads->book_verse)}}&pub=nwtsty"
+               target="_blank">READ</a></div>
     @endforeach
 </div>
