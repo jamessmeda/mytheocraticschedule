@@ -4,7 +4,8 @@
             @case(1)
                 {{--Things are {{$thing['id']}}--}}
                 <div class="text-center flex-fill">
-                    <div class="rounded-3xl border-2 border-fuchsia-300 bg-emerald-50 p-5">Bible Reading<p>
+                    <div class="rounded-3xl border-2 border-fuchsia-300 bg-emerald-50 p-5"><i
+                            class="fa-solid fa-sun"></i> Bible Reading<p>
                         <form method="POST" action="{{ route('storeReading') }}">
                             @csrf
                             <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
