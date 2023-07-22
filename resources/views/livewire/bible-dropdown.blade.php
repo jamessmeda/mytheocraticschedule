@@ -44,16 +44,16 @@
         </label>
         {{--    add a space below this input--}}
         <br>
-        <div class="inline-flex items-center py-2 px-4 m-0 text-xs font-semibold tracking-widest
-leading-4 text-center text-white uppercase bg-gray-700 bg-none rounded-md border
-border-transparent border-solid duration-150 ease-in-out cursor-pointer
-box-border
-">
-            {{--            inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring--}}
-            {{--            focus:ring-gray-300 disabled:opacity-25 transition--}}
-            {{--don't submit the form when clicking the button but rather click the link--}}
-            <a href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=E&prefer=lang&bible={{sprintf('%02d',$reads->book_read)}}{{sprintf('%03d',$reads->book_chapter)}}{{sprintf('%03d',$reads->book_verse)}}&pub=nwtsty"
-               target="_blank">Read</a></div>
+        {{--    set tailwind button to be 100px wide --}}
+
+        <a class="inline-flex items-center py-2 px-4 m-2 text-xs font-semibold tracking-widest
+           leading-4 text-center text-white uppercase bg-gray-700 bg-none rounded-md border
+           border-transparent border-solid duration-150 ease-in-out cursor-pointer
+           box-border
+        "
+           href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=E&prefer=lang&bible={{sprintf('%02d',$reads->book_read)}}{{sprintf('%03d',$reads->book_chapter)}}{{sprintf('%03d',$reads->book_verse)}}&pub=nwtsty"
+           target="_blank">Read</a>
         <br>
+
 @endforeach
 

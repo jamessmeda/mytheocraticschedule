@@ -20,7 +20,7 @@
 
 
                     @livewire('user-stats', ['thingId' => $thing['id']])
-                    <x-jet-button class="bg-fuchsia-700">Record {{ $thing['name'] }}</x-jet-button>
+                    <x-jet-button class="bg-fuchsia-700 m-2">Record {{ $thing['name'] }}</x-jet-button>
                     </form>
 
     </div>
@@ -38,7 +38,7 @@
                 <input type="hidden" name="action-type" value="Done"></input>
                 @livewire('actions', ['thingId' => $thing['id']])
                 @livewire('user-stats', ['thingId' => $thing['id']])
-                <x-jet-button class="bg-blend-color-burn">Record {{ $thing['name'] }}</x-jet-button>
+                <x-jet-button class="bg-blend-color-burn m-2">Record {{ $thing['name'] }}</x-jet-button>
 
             </form>
         </div>
