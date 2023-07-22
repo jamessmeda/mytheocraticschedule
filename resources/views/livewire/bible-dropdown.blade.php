@@ -45,15 +45,11 @@
         {{--    add a space below this input--}}
         <br>
         {{--    set tailwind button to be 100px wide --}}
-
-        <a class="inline-flex items-center py-2 px-4 m-2 text-xs font-semibold tracking-widest
-           leading-4 text-center text-white uppercase bg-gray-700 bg-none rounded-md border
-           border-transparent border-solid duration-150 ease-in-out cursor-pointer
-           box-border
-        "
-           href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=E&prefer=lang&bible={{sprintf('%02d',$reads->book_read)}}{{sprintf('%03d',$reads->book_chapter)}}{{sprintf('%03d',$reads->book_verse)}}&pub=nwtsty"
-           target="_blank">Read</a>
-        <br>
-
-@endforeach
-
+        <div class="rounded-xl items-center m-3">
+            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+               href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=E&prefer=lang&bible={{sprintf('%02d',$reads->book_read)}}{{sprintf('%03d',$reads->book_chapter)}}{{sprintf('%03d',$reads->book_verse)}}&pub=nwtsty"
+               target="_blank">Read</a>
+            <br>
+        </div>
+    @endforeach
+</div>
