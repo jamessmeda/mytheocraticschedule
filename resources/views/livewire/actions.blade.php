@@ -16,30 +16,30 @@
 
                     <i class="fas fa-check-square text-green-400"></i>
 
-                        {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
-                        <p>
-                        {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
-                            <p>
-                @else
-                    *
-                @endif
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
+                    <p>
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
+                    <p>
+                        @else
+                            *
+                        @endif
 
-            @endforeach
-{{--                    @livewire('user-stats')--}}
-            @break
-        @default
-            @foreach($actions as $action)
-                @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
-                    <i class="fas fa-check-square text-green-400"></i>
-                        {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
-                        <p>
-                        {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
-                        <p>
-                @else
-                    *
+                        @endforeach
+                        {{--                    @livewire('user-stats')--}}
+                        @break
+                        @default
+                            @foreach($actions as $action)
+                                @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
+                                    <i class="fas fa-check-square text-green-400"></i>
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
+                    <p>
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
+                    <p>
+                        @else
+                            *
                 @endif
             @endforeach
-{{--                @livewire('user-stats')--}}
+            {{--                @livewire('user-stats')--}}
             @break
     @endswitch
 </div>
