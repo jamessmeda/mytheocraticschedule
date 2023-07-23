@@ -16,7 +16,7 @@
 
                     <i class="fas fa-check-square text-green-400"></i>
 
-                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->format('d/m/Y')}}
                     <p>
                     {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
                     <p>
@@ -31,7 +31,7 @@
                             @foreach($actions as $action)
                                 @if(\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->isToday())
                                     <i class="fas fa-check-square text-green-400"></i>
-                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')}}
+                    {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->format('d/m/Y')}}
                     <p>
                     {{\Carbon\Carbon::parse($action->action_date)->tz('Australia/Adelaide')->diffForHumans()}}
                     <p>

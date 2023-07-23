@@ -1,8 +1,10 @@
 <div>
-    Weekly Stats
+    Weekly:
     {{ $UserStatsWeek }}
-    Monthly Stats
+    <br>
+    Monthly:
     {{ $UserStats }}
-    Yearly Stats
+    <br>
+    Yearly:
     {{ $UserStatsYear }}
 </div>
