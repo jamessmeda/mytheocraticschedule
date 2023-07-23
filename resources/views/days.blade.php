@@ -42,9 +42,9 @@
                         {{$thing['name']}}<p>
                         <form method="POST" action="{{ route('actions.store') }}">
                             @csrf
-                            <input type="hidden" name="thing-id" value="{{$thing['id']}}"></input>
-                            <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}"></input>
-                            <input type="hidden" name="action-type" value="Done"></input>
+                            <input type="hidden" name="thing-id" value="{{$thing['id']}}">
+                            <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}">
+                            <input type="hidden" name="action-type" value="Done">
                             @livewire('actions', ['thingId' => $thing['id']])
                             @livewire('user-stats', ['thingId' => $thing['id']])
                             <x-jet-button class="bg-blend-color-burn m-2">Record {{ $thing['name'] }}</x-jet-button>
