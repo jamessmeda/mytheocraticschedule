@@ -84,5 +84,7 @@ class ActionsController extends Controller
 
     public function destroy(Action $action)
     {
+        $action->delete();
+        return redirect(route('day'));
     }
 }
