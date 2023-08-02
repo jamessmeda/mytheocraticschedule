@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 
 class ThingsController extends Controller
 {
+    //accept id as a parameter from the route and use it to get the things that belong to that category
+
+
     public function index()
     {
 
-        $things = Thing::all();
-
-        return view('days', compact('things'));
     }
 
     public function create()
@@ -26,9 +26,14 @@ class ThingsController extends Controller
     {
     }
 
-    public function show(Thing $thing)
+    public function show(int $thing)
     {
-
+//        @dd($thing);
+//get only the things that belong to a specified category
+        $things = Thing::where('category_id', $thing)->get();
+//        $things = Thing::all();
+//        @dd($things);
+        return view('days', compact('things'));
     }
 
     public function edit(Thing $thing)

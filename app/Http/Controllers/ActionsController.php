@@ -34,7 +34,11 @@ class ActionsController extends Controller
         ]);
         $actionDone->save();
 
-        return redirect(route('day'));
+//        return redirect(route('day'));
+
+        $cat = \App\Models\Thing::find($request['thing-id']);
+
+        return redirect(route('day', ['id' => $cat->category_id]));
     }
 
     public function storeReading(Request $request)
@@ -66,8 +70,10 @@ class ActionsController extends Controller
         ]);
 
         $readingDone->save();
+//add the id of the category to the day view
+        $cat = \App\Models\Thing::find($request['thing-id']);
 
-        return redirect(route('day'));
+        return redirect(route('day', ['id' => $cat->category_id]));
     }
 
     public function show(Action $action)
@@ -85,6 +91,10 @@ class ActionsController extends Controller
     public function destroy(Action $action)
     {
         $action->delete();
-        return redirect(route('day'));
+//        return redirect(route('day'));
+        $cat = \App\Models\Thing::find($action['thing-id']);
+
+        return redirect(route('day', ['id' => $cat->category_id]));
+
     }
 }

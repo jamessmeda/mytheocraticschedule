@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="text-center m-0.5">
         @foreach($things as $thing)
-
+            {{--            @dd($things)--}}
             @switch($thing['id'])
                 @case(1)
                     {{--Things are {{$thing['id']}}--}}
