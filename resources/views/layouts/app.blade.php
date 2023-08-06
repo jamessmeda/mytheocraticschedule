@@ -21,6 +21,8 @@
 <x-jet-banner/>
 
 <div class="min-h-screen bg-gray-100">
+    {{--    send $categories to the livewire view below --}}
+
     @livewire('navigation-menu')
 
     <!-- Page Heading -->
