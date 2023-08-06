@@ -20,11 +20,11 @@
                     @foreach($categories as $category)
                         {{-- set every secord record to blue backgroud--}}
 
-                        <div class="p-6 border-8 rounded-full bg-blue-500">
-                            <x-jet-responsive-nav-link href="{{ route('day',['id' => $category->id]) }}"
-                                                       :active="request()->routeIs('day')">
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('day',['id' => $category->id]) }}"
+                                            :active="request()->routeIs('day')">
                                 {{ __($category->title) }}
-                            </x-jet-responsive-nav-link>
+                            </x-jet-nav-link>
                         </div>
 
                     @endforeach
@@ -171,9 +171,9 @@
             @foreach($categories as $category)
                 {{-- set every secord record to blue backgroud--}}
 
-                <div class="p-6 border-8 rounded-full bg-blue-500">
+                <div class="pt-2 pb-3 space-y-1">
                     <x-jet-responsive-nav-link href="{{ route('day',['id' => $category->id]) }}"
-                                               :active="request()->routeIs('day')">
+                                               :active="request()->routeIs('day',['id' => $category->id])">
                         {{ __($category->title) }}
                     </x-jet-responsive-nav-link>
                 </div>
