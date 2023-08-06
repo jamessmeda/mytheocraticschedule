@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ThingsController;
 use App\Models\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -29,17 +30,21 @@ Route::middleware([
 
     Route::get('/contact', ContactController::class)->name('contact');
     Route::controller(ThingsController::class)->group(function () {
-        Route::get('/days', 'index')->name('day');
-        Route::get('/days/{id}', 'show')->name('SolidThinking');
+//send the things id to the route
+
+
+        Route::get('/things/{id}', 'show')->name('day');
+
     });
     Route::controller(ActionsController::class)->group(function () {
         Route::post('storeReading', 'storeReading')->name('storeReading');
     });
     Route::resource('actions', ActionsController::class);
-    Route::get('/dashboard', function () {
-        $things = Thing::all()->get('name');
-        return view('dashboard')->with($things);
-    })->name('dashboard');
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard', 'index')->name('dashboard');
+    });
+
+
 });
 
 
