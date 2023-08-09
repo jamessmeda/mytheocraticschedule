@@ -1,3 +1,4 @@
+@props(['categories'])
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,16 +17,16 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('day',[1]) }}" :active="0">
+                        <x-jet-nav-link href="{{ route('day',[1]) }}" :active="request()->is('things/1')">
                             {{ __('Day') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('day',[2]) }}" :active="0">
+                        <x-jet-nav-link href="{{ route('day',[2]) }}" :active="request()->is('things/2')">
                             {{ __('Week') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('day',[3]) }}" :active="false">
+                        <x-jet-nav-link href="{{ route('day',[3]) }}" :active="request()->is('things/3')">
                             {{ __('Month') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('day',[4]) }}" :active="false">
+                        <x-jet-nav-link href="{{ route('day',[4]) }}" :active="request()->is('things/4')">
                             {{ __('Year') }}
                         </x-jet-nav-link>
 
