@@ -171,6 +171,18 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('day',[1]) }}" :active="request()->is('things/1')">
+                {{ __('Day') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('day',[2]) }}" :active="request()->is('things/2')">
+                {{ __('Week') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('day',[3]) }}" :active="request()->is('things/3')">
+                {{ __('Month') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('day',[4]) }}" :active="request()->is('things/4')">
+                {{ __('Year') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
