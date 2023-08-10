@@ -1,4 +1,31 @@
 <x-app-layout>
+    <x-slot name="header">
+        {{--        if the current url is /things/1 then show the following line--}}
+        @if(request()->is('things/1'))
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Day') }}
+            </h2>
+        @endif
+        @if(request()->is('things/2'))
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Week') }}
+            </h2>
+        @endif
+        @if(request()->is('things/3'))
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Month') }}
+            </h2>
+        @endif
+        @if(request()->is('things/4'))
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Year') }}
+            </h2>
+        @endif
+        {{--        <h2 class="font-semibold text-xl text-gray-800 leading-tight">--}}
+        {{--            Home--}}
+        {{--            {{ __('Dashboard') }}--}}
+        {{--        </h2>--}}
+    </x-slot>
     <div class="text-center m-0.5">
         @foreach($things as $thing)
             {{--            @dd($things)--}}

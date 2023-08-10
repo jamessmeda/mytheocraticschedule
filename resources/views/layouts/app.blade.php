@@ -36,7 +36,7 @@
     <main>
         {{ $slot }}
     </main>
-    <div class="flex-fill items-center">{{\Carbon\Carbon::now()->tz(Auth::user()->timezone)}}</div>
+    {{--    <div class="flex-fill items-center">{{\Carbon\Carbon::now()->tz(Auth::user()->timezone)}}</div>--}}
 
 </div>
 
