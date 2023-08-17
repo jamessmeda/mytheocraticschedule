@@ -69,14 +69,14 @@
 
                     <div class="rounded-1xl border-2 border-fuchsia-300 bg-amber-500 p-5 m-0.5">
                         <i class="fa-solid fa-star"></i> Day text<p>
-                        <form method="POST" action="{{ route('storeReading') }}">
+                        <form method="POST" action="{{ route('actions.store') }}">
                             @csrf
                             <input type="hidden" name="thing-id" value="{{$thing['id']}}">
                             <input type="hidden" name="action_date" value="{{\Carbon\Carbon::now()}}">
                             <input type="hidden" name="action-type" value="Done">
                             @livewire('actions', ['thingId' => $thing['id']])
                             @livewire('user-stats', ['thingId' => $thing['id']])
-                            <x-jet-button class="bg-fuchsia-700 m-2">Record {{ $thing['name'] }}</x-jet-button>
+                            <x-jet-button class="bg-blend-color-burn m-2">Record {{ $thing['name'] }}</x-jet-button>
                         </form>
                         {{--show and hid a div with the edit form--}}
                         <div x-data="{ show: false }">
@@ -93,7 +93,7 @@
                                 </form>
                             </div>
                         </div>
-
+                        {{-- add livewire componet to edit the bible reading --}}
                         {{--                        <x-jet-button class="bg-red-400 m-2">Edit {{ $thing['name'] }}</x-jet-button>--}}
                     </div>
                     @break
