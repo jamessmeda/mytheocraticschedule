@@ -9,18 +9,17 @@
         {{--            </h2>--}}
         {{--        @endif--}}
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Ooops') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                we can't find that page
 
-                {{--                send things variable to welcome component--}}
-                <x-jet-welcome :categories="$categories"/>
-                {{--                <x-jet-welcome />--}}
             </div>
         </div>
     </div>
 </x-app-layout>
+
