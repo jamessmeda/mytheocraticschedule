@@ -44,6 +44,9 @@ Route::middleware([
         Route::get('/dashboard', 'index')->name('dashboard');
     });
 
+    Route::fallback(function () {
+        return view('404');
+    });
 
 });
 

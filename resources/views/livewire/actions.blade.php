@@ -41,6 +41,15 @@
             @endforeach
             {{--                @livewire('user-stats')--}}
             @break
+
+        @case(4)
+            {{--            @if($actions->isEmpty())--}}
+            @livewire('day-text-dropdown', ['actionId' => 4])
+            {{--            @endif--}}
+
+
+            @break
+
     @endswitch
 </div>
 {{--create a mini calander--}}
