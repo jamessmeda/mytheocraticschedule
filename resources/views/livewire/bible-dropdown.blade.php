@@ -9,7 +9,7 @@
             </select>
         </label>
     </div>
-    <div class="rounded-xl  items-center">
+    <div class="rounded-xl items-center">
         <label>
             <input name="chapter" type="number" value="1">
         </label>

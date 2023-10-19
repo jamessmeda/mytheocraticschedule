@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="ml-12">
-                    <div class="mt-2 text-sm  text-white uppercase">
+                    <div class="mt-2 text-sm text-white uppercase">
                         Important things for each {{$category->title}}.
                     </div>
                 </div>
