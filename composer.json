@@ -14,7 +14,7 @@
         "jamesmills/laravel-timezone": "^1.11",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^10.0",
-        "laravel/jetstream": "^2.12",
+        "laravel/jetstream": "^4.0",
         "laravel/sanctum": "^3.0",
         "laravel/telescope": "^4.11",
         "laravel/tinker": "^2.7",
