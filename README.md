@@ -1,10 +1,10 @@
 ## About My Theocratic Schedule
 
-My Theocratic Schedule or MTS (a play on the Ministerial Training School acronym) is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- keep track of your theocratic activities
+My Theocratic Schedule or MTS (a play on the Ministerial Training School acronym) is a web application
+that can be used by a Jehovah's Witness to keep track of their theocratic activities. It is built using
+the Laravel framework.
 
 ## License
 
-The MTS or My theocratic schedule 
- is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MTS or My theocratic schedule
+is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
