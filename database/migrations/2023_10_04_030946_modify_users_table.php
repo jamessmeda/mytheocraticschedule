@@ -13,8 +13,8 @@ return new class extends Migration {
         //add soft deletes to users table
         Schema::table('users', function (Blueprint $table) {
             $table->softDeletes();
-            $table->string('first_name', 255);
-            $table->string('last_name', 255);
+            $table->string('first_name', 255)->nullable();
+            $table->string('last_name', 255)->nullable();
             $table->integer('account_id')->index();
         });
     }
