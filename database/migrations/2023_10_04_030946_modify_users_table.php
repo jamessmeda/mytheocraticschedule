@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->softDeletes();
             $table->string('first_name', 255)->nullable();
             $table->string('last_name', 255)->nullable();
-            $table->integer('account_id')->index();
+            $table->integer('account_id')->index()->nullable();
         });
     }
 
